@@ -1,4 +1,3 @@
-""" Optixal's Neovim Init.vim
 
 """ Vim-Plug
 call plug#begin()
@@ -74,6 +73,10 @@ let g:UltiSnipsExpandTrigger="<C-Space>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<C-x>"
 
+" Multicursor
+let g:multi_cursor_start_word_key="<C-d>"
+let g:multi_cursor_next_key="<C-d>"
+
 " EasyAlign
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -106,7 +109,6 @@ let g:fzf_colors =
 " in case you ever decide to use vim-fugitive :)
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-""" Custom Mappings
 let mapleader=","
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 nmap <leader>f :Rg<CR>
@@ -116,7 +118,6 @@ nmap <S-Tab> :bprevious<CR>
 nmap <c-p> :Files<CR>
 nmap <c-w> :bw!<CR>
 nmap <c-t> :tabnew<CR>
-xmap <c-d> <c-n>
 
 " Closes FZF buffer by pressing Esc
 tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
