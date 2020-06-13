@@ -82,10 +82,6 @@ nmap ga <Plug>(EasyAlign)
 let g:indentLine_char = '▏'
 let g:indentLine_color_gui = '#363949'
 
-" TagBar
-let g:tagbar_width = 30
-let g:tagbar_iconchars = ['↠', '↡']
-
 " fzf-vim
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
