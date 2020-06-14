@@ -1,6 +1,6 @@
-<center>
-# Reduced version of Optixal's Neovim init.vim
-</center>
+<h1 align="center">
+Reduced version of Optixal's Neovim init.vim
+</h1>
 
 ### Main differences
 * Easier installation
