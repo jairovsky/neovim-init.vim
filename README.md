@@ -3,47 +3,26 @@
 </center>
 
 ### Main differences
-* Easier installation.
+* Easier installation
 * Removed dependency on python
 * Removed most of the leader key mappings
 * Removed extra themes
-* Removed various plug-ins ~~that I judged unnecessary~~
+* Removed various plugins ~~that I judged unnecessary~~
 * Added support for EditorConfig
-* Added some sublime-textyness (ctrl-p, ctrl-d and ctrl-enter shortcuts)
+* Added some sublime-textyness
+
+The purpose is to make neovim usable right away, with file search (by name and by content), good syntax highlight support and a color scheme that is not perfect but behaves well across many programming languages.
 
 ### Install
 ```
 bash -c "$(curl -sSL https://raw.githubusercontent.com/jairovsky/neovim-init.vim/master/install.sh)"
 ```
 ### Updating plugins
+Plugins are managed with [vim-plug](https://github.com/junegunn/vim-plug).
 
-```
-nvim
-:PlugUpdate
-```
-
-(Optional) Clean plugins - Deletes unused plugins
-
-```
-nvim
-:PlugClean
-```
-
-(Optional) Check, download and install the latest vim-plug
-
-```
-nvim
-:PlugUpgrade
-```
-
-(Optional) Pull my updates if you want my new modifications
-
-```sh
-git pull
-cp init.vim ~/.config/nvim/
-```
-### Mapped Commands in Normal Mode
-
-Most custom commands expand off my map leader, keeping nvim as vanilla as possible.
-
-* <kbd>,</kbd> - Map leader, nearly all my custom mappings starts with pressing the comma key
+### Mapped commands
+* <kbd>,</kbd><kbd>f</kbd> opens fzf search by file content (ripgrep must be installed)
+* <kbd>,</kbd><kbd>y</kbd> copies the entire buffer to clipboard
+* <kbd>Ctrl</kbd><kbd>P</kbd> opens fzf search by file name
+* <kbd>Ctrl</kbd><kbd>D</kbd> starts multiple word selection (similar to Sublime Text)
+* <kbd>Ctrl</kbd><kbd>Enter</kbd> selects all words in the buffer that match the current selection (similar to Sublime Text)
