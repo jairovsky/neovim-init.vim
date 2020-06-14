@@ -1,4 +1,3 @@
-
 """ Vim-Plug
 call plug#begin()
 
@@ -7,15 +6,11 @@ Plug 'dracula/vim', { 'commit': '147f389f4275cec4ef43ebc25e2011c57b45cc00' }
 Plug 'ryanoasis/vim-devicons'
 
 " Functionalities
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
+Plug 'alvan/vim-closetag'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/vim-easy-align'
-Plug 'alvan/vim-closetag'
 Plug 'Yggdroot/indentLine'
+Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
@@ -23,6 +18,10 @@ Plug 'vim-scripts/loremipsum'
 Plug 'honza/vim-snippets'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
 
 call plug#end()
 
@@ -76,6 +75,7 @@ let g:UltiSnipsJumpBackwardTrigger="<C-x>"
 " Multicursor
 let g:multi_cursor_start_word_key="<C-d>"
 let g:multi_cursor_next_key="<C-d>"
+let g:multi_cursor_select_all_key="<A-CR>"
 
 " EasyAlign
 xmap ga <Plug>(EasyAlign)
@@ -105,6 +105,9 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+" closes fzf buffer when Esc is pressed
+tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
+
 " EditorConfig
 " in case you ever decide to use vim-fugitive :)
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
@@ -119,10 +122,9 @@ nmap <c-p> :Files<CR>
 nmap <c-w> :bw!<CR>
 nmap <c-t> :tabnew<CR>
 
-" Closes FZF buffer by pressing Esc
-tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 
 let custom_config_file = expand('<sfile>:p:h') . "/custom.vim"
 if filereadable(custom_config_file)
     exec 'source' custom_config_file
 endif
+
