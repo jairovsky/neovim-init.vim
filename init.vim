@@ -1,4 +1,3 @@
-
 """ Vim-Plug
 call plug#begin()
 
@@ -112,6 +111,12 @@ tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 " in case you ever decide to use vim-fugitive :)
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
+" vim-markdown
+" disable syntax concealment
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+
+" Mappings
 let mapleader=","
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 nmap <leader>f :Rg<CR>
@@ -121,11 +126,14 @@ nmap <S-Tab> :bprevious<CR>
 nmap <c-p> :Files<CR>
 nmap <c-w> :bw!<CR>
 nmap <c-t> :tabnew<CR>
+nmap <leader>y :Yall<CR>
 
-
-let custom_config_file = expand('<sfile>:p:h') . "/custom.vim"
-if filereadable(custom_config_file)
-    exec 'source' custom_config_file
-endif
-
+" Copy entire buffer to clipboard register
+command! Yall :call Yall()
+function! Yall()
+    let cur_pos = getpos('.')
+    call cursor(cur_pos[1], cur_pos[2])
+    exec 'normal! gg"+yG'
+    call setpos('.', cur_pos)
+endfunction
 
