@@ -1,3 +1,4 @@
+
 """ Vim-Plug
 call plug#begin()
 
@@ -8,7 +9,6 @@ Plug 'ryanoasis/vim-devicons'
 " Functionalities
 Plug 'alvan/vim-closetag'
 Plug 'ervandew/supertab'
-Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -127,4 +127,5 @@ let custom_config_file = expand('<sfile>:p:h') . "/custom.vim"
 if filereadable(custom_config_file)
     exec 'source' custom_config_file
 endif
+
 
