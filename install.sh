@@ -39,7 +39,6 @@ curl -fLo /tmp/jairovsky-init.vim --create-dirs https://raw.githubusercontent.co
 # Enter Neovim and install plugins using a temporary init.vim, which avoids warnings about missing colorschemes, functions, etc
 sed '/call plug#end/q' /tmp/jairovsky-init.vim > $XDG_CONFIG_HOME/nvim/init.vim
 nvim -c ':PlugInstall' -c ':UpdateRemotePlugins' -c ':qall'
-rm ~/.config/nvim/init.vim
-cp /tmp/jairovsky-init.vim $XDG_CONFIG_HOME/nvim/
+cp /tmp/jairovsky-init.vim $XDG_CONFIG_HOME/nvim/init.vim
 
 echo -e "[+] Done, welcome to \033[1m\033[92mNeoVim\033[0m! Try it by running: nvim/vim. Want to customize it? Modify $XDG_CONFIG_HOME/nvim/init.vim"
