@@ -2,6 +2,9 @@
 Reduced version of Optixal's Neovim init.vim
 </h1>
 
+![Tilix: Default_005](https://user-images.githubusercontent.com/1995580/84717487-53693300-af4c-11ea-9037-9528aa8c6475.png)
+
+
 ### Main differences
 * Easier installation
 * Removed dependency on python
